@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Liar's Dice Odds Calculator</title>
+	<link rel="icon" type="image/png" href="data:image/png;base64,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" sizes="96x96" />
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center">
+
+	<!-- Header -->
+	<h1 class="text-3xl font-bold mb-8">Liar's Dice Odds Calculator</h1>
+
+	<!-- CSS -->
+	<style>
+		details>summary {
+			list-style: none;
+		}
+
+		details>summary::marker,
+		/* Latest Chrome, Edge, Firefox */
+		details>summary::-webkit-details-marker
+
+		/* Safari */
+			{
+			display: none;
+		}
+
+		input[type=number]::-webkit-inner-spin-button,
+		input[type=number]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	</style>
+
+	<!-- Form -->
+	<div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md ">
+		<form id="diceForm" class="space-y-4">
+			<!-- Total Dice in Play -->
+			<div class="flex items-center space-x-2">
+				<label for="totalDice" class="block text-sm font-medium w-48">Total Dice in Play</label>
+				<div class="flex items-center space-x-2">
+					<button type="button" onclick="adjustValue('totalDice', -1)" class="px-2 py-1 bg-gray-700 rounded hover:bg-gray-600">-</button>
+					<input type="number" id="totalDice" name="totalDice" min="1" required class="w-20 px-2 py-1 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-center">
+					<button type="button" onclick="adjustValue('totalDice', 1)" class="px-2 py-1 bg-gray-700 rounded hover:bg-gray-600">+</button>
+				</div>
+			</div>
+
+			<!-- Current Bid -->
+			<div class="flex items-center space-x-2">
+				<label for="currentBid" class="block text-sm font-medium w-48">Current Bid (Number of Dice)</label>
+				<div class="flex items-center space-x-2">
+					<button type="button" onclick="adjustValue('currentBid', -1)" class="px-2 py-1 bg-gray-700 rounded hover:bg-gray-600">-</button>
+					<input type="number" id="currentBid" name="currentBid" min="1" required class="w-20 px-2 py-1 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-center">
+					<button type="button" onclick="adjustValue('currentBid', 1)" class="px-2 py-1 bg-gray-700 rounded hover:bg-gray-600">+</button>
+				</div>
+			</div>
+
+			<!-- Number of Dice in My Hand -->
+			<div class="flex items-center space-x-2">
+				<label for="myDiceCount" class="block text-sm font-medium w-48">Number of Dice in My Hand</label>
+				<div class="flex items-center space-x-2">
+					<button type="button" onclick="adjustValue('myDiceCount', -1)" class="px-2 py-1 bg-gray-700 rounded hover:bg-gray-600">-</button>
+					<input type="number" id="myDiceCount" name="myDiceCount" min="0" required class="w-20 px-2 py-1 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-center">
+					<button type="button" onclick="adjustValue('myDiceCount', 1)" class="px-2 py-1 bg-gray-700 rounded hover:bg-gray-600">+</button>
+				</div>
+			</div>
+
+			<!-- Number of Matching Dice in My Hand -->
+			<div class="flex items-center space-x-2">
+				<label for="myMatchingDice" class="block text-sm font-medium w-48">Number of Dice in My Hand matching bid</label>
+				<div class="flex items-center space-x-2">
+					<button type="button" onclick="adjustValue('myMatchingDice', -1)" class="px-2 py-1 bg-gray-700 rounded hover:bg-gray-600">-</button>
+					<input type="number" id="myMatchingDice" name="myMatchingDice" min="0" required class="w-20 px-2 py-1 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-center">
+					<button type="button" onclick="adjustValue('myMatchingDice', 1)" class="px-2 py-1 bg-gray-700 rounded hover:bg-gray-600">+</button>
+				</div>
+			</div>
+
+			<!-- Results -->
+			<div id="results" class="mt-6 space-y-4 hidden">
+				<p id="oddsWithoutWildcards" class="text-lg whitespace-nowrap">Odds Without Wildcards: --.--%</p>
+				<div class="w-full bg-gray-700 rounded-full h-4">
+					<div id="progressWithoutWildcards" class="h-full bg-blue-500 rounded-full" style="width: 0%;"></div>
+				</div>
+
+				<p id="oddsWithWildcards" class="text-lg whitespace-nowrap">Odds With Wildcards: --.--%</p>
+				<div class="w-full bg-gray-700 rounded-full h-4">
+					<div id="progressWithWildcards" class="h-full bg-green-500 rounded-full" style="width: 0%;"></div>
+				</div>
+			</div>
+
+			<!-- Visualizer -->
+			<div id="visualizer" class="mt-6 flex flex-wrap gap-2 hidden"></div>
+			<div>
+				<details class="group">
+					<summary class="flex flex-row-reverse items-center marker:content-none hover:cursor-pointer">
+						<span>ⓘ</span>
+					</summary>
+					<article>
+						<ul id="legend" class="list-none list-inside text-sm tracking-tight text-gray-500 leading-none whitespace">
+							<li><i class="fa-solid fa-square text-orange-500 pr-1 fa-2xs "></i> Orange dice represent your dice matching the bid </li>
+							<li><i class="fa-solid fa-square text-white pr-1 fa-2xs "></i>White dice represent the total bid (including your dice) </li>
+							<li><i class="fa-solid fa-square text-gray-500 pr-1 fa-2xs "></i>Grey dice represent the remaining dice </li>
+							<li><i class="fa-solid fa-square text-gray-700 pr-1 fa-2xs "></i>Dark-grey dice represent known dice not matching the bid </li>
+							<li><i class="fa-solid fa-circle text-blue-500 pr-1 fa-2xs"></i><i class="fa-solid fa-circle text-green-500 pr-1 fa-2xs"></i> Blue and green dots represent the probable number of dice with, and without, wildcards</li>
+						</ul>
+					</article>
+				</details>
+			</div>
+		</form>
+	</div>
+	<footer class="block flex absolute bottom-2 right-2 gap-2 text-gray-500">
+		<button onclick="location.href='https://en.wikipedia.org/wiki/Liar%27s_dice'" class="text-sm hover:text-blue-500">Rules</button>
+		<button onclick="location.href='https://github.com/Porco-Rosso/Liars-Dice-Calculator'"><i class="fa-brands fa-github hover:text-blue-500"></i></button>
+
+		<span></span>
+	</footer>
+	<!-- JavaScript -->
+	<script>
+		// Utility function to calculate binomial coefficient (n choose k)
+		function binomialCoefficient(n, k) {
+			if (k > n) return 0;
+			if (k === 0 || k === n) return 1;
+			let result = 1;
+			for (let i = 1; i <= k; i++) {
+				result *= (n - i + 1) / i;
+			}
+			return result;
+		}
+
+		// Function to calculate cumulative probability
+		function calculateCumulativeProbability(totalDice, currentBid, myDiceCount, myMatchingDice, wildcard = false) {
+			const remainingDice = totalDice - myDiceCount;
+			const targetMatches = currentBid - myMatchingDice;
+
+			if (targetMatches <= 0) return 1; // Already met or exceeded the bid
+
+			let cumulativeProbability = 0;
+			const probabilityPerDie = wildcard ? 1 / 3 : 1 / 6; // Wildcard doubles the chance (1/3)
+
+			for (let matches = targetMatches; matches <= remainingDice; matches++) {
+				const combinations = binomialCoefficient(remainingDice, matches);
+				const successProbability = Math.pow(probabilityPerDie, matches);
+				const failureProbability = Math.pow(1 - probabilityPerDie, remainingDice - matches);
+				cumulativeProbability += combinations * successProbability * failureProbability;
+			}
+
+			return cumulativeProbability;
+		}
+
+		// Function to calculate the most probable number of matching dice
+		function calculateMostProbableMatches(totalDice, myDiceCount, myMatchingDice, wildcard = false) {
+			const remainingDice = totalDice - myDiceCount;
+			const probabilityPerDie = wildcard ? 1 / 3 : 1 / 6;
+
+			// Expected value formula: E[X] = n * p
+			const expectedRemainingMatches = Math.round(remainingDice * probabilityPerDie);
+
+			// Add the matches from your hand
+			return myMatchingDice + expectedRemainingMatches;
+		}
+
+		// Function to update the results dynamically
+		function updateResults() {
+			// Get input values
+			const totalDice = parseInt(document.getElementById('totalDice').value) || 0;
+			const currentBid = parseInt(document.getElementById('currentBid').value) || 0;
+			const myDiceCount = parseInt(document.getElementById('myDiceCount').value) || 0;
+			const myMatchingDice = parseInt(document.getElementById('myMatchingDice').value) || 0;
+
+			// Validate inputs
+			if (totalDice <= 0 || currentBid <= 0 || myDiceCount < 0 || myMatchingDice < 0 || myMatchingDice > myDiceCount) {
+				document.getElementById('results').classList.add('hidden');
+				document.getElementById('visualizer').classList.add('hidden');
+				return;
+			}
+
+			// Calculate probabilities
+			const oddsWithoutWildcards = calculateCumulativeProbability(totalDice, currentBid, myDiceCount, myMatchingDice, false);
+			const oddsWithWildcards = calculateCumulativeProbability(totalDice, currentBid, myDiceCount, myMatchingDice, true);
+
+			// Display results
+			document.getElementById('oddsWithoutWildcards').textContent = `Odds Without Wildcards: ${(oddsWithoutWildcards * 100).toFixed(2)}%`;
+			document.getElementById('oddsWithWildcards').textContent = `Odds With Wildcards: ${(oddsWithWildcards * 100).toFixed(2)}%`;
+
+			// Update progress bars
+			document.getElementById('progressWithoutWildcards').style.width = `${(oddsWithoutWildcards * 100).toFixed(2)}%`;
+			document.getElementById('progressWithWildcards').style.width = `${(oddsWithWildcards * 100).toFixed(2)}%`;
+
+			// Show results section
+			document.getElementById('results').classList.remove('hidden');
+
+			// Update visualizer
+			updateVisualizer(totalDice, currentBid, myDiceCount, myMatchingDice);
+		}
+
+		// Function to update the visualizer
+		function updateVisualizer(totalDice, currentBid, myDiceCount, myMatchingDice) {
+			const visualizer = document.getElementById('visualizer');
+			visualizer.innerHTML = ''; // Clear previous dice
+
+			// Calculate the most probable number of matching dice
+			const expectedMatchesWithoutWildcards = calculateMostProbableMatches(totalDice, myDiceCount, myMatchingDice, false);
+			const expectedMatchesWithWildcards = calculateMostProbableMatches(totalDice, myDiceCount, myMatchingDice, true);
+
+			// Array of random dice faces (excluding fa-dice-six)
+			const randomDiceIcons = ['fa-dice-one', 'fa-dice-two', 'fa-dice-three', 'fa-dice-four', 'fa-dice-five'];
+
+			// Create rows to hold the dice
+			let currentRow = null;
+			for (let i = 0; i < totalDice; i++) {
+				// Start a new row if needed
+				if (i % 10 === 0) {
+					currentRow = document.createElement('div');
+					currentRow.className = 'flex justify-center space-x-2 mb-2'; // Flexbox for horizontal alignment
+					visualizer.appendChild(currentRow);
+				}
+
+				const dieDiv = document.createElement('div');
+				dieDiv.className = 'relative';
+
+				// Add dice icon
+				const dieIcon = document.createElement('i');
+				if (i < myMatchingDice) {
+					dieIcon.className = 'fas fa-dice-six text-2xl text-orange-400'; // Orange dice for matching dice in hand
+				} else if (i < currentBid) {
+					dieIcon.className = 'fas fa-dice-six text-2xl text-white'; // White dice for the bid
+				} else if (i < totalDice - (myDiceCount - myMatchingDice)) {
+					const randomIcon = randomDiceIcons[Math.floor(Math.random() * randomDiceIcons.length)];
+					dieIcon.className = `fas ${randomIcon} text-2xl text-gray-500`; // Gray dice for other dice
+				} else {
+					const randomIcon = randomDiceIcons[Math.floor(Math.random() * randomDiceIcons.length)];
+					dieIcon.className = `fas ${randomIcon} text-2xl text-gray-700`; // Gray dice for other dice
+				}
+				dieDiv.appendChild(dieIcon);
+
+				// Add blue dot for without wildcards (offset to the left)
+				if (i < expectedMatchesWithoutWildcards) {
+					const blueDot = document.createElement('div');
+					blueDot.className = 'absolute bottom-0 left-1/4 transform -translate-x-1/2 w-2 h-2 bg-blue-500 rounded-full';
+					dieDiv.appendChild(blueDot);
+				}
+
+				// Add green dot for with wildcards (offset to the right)
+				if (i < expectedMatchesWithWildcards) {
+					const greenDot = document.createElement('div');
+					greenDot.className = 'absolute bottom-0 right-1/4 transform translate-x-1/2 w-2 h-2 bg-green-500 rounded-full';
+					dieDiv.appendChild(greenDot);
+				}
+
+				// Append the die to the current row
+				currentRow.appendChild(dieDiv);
+			}
+
+			// Show visualizer
+			visualizer.classList.remove('hidden');
+		}
+
+
+		// Function to adjust input values
+		function adjustValue(inputId, delta) {
+			const input = document.getElementById(inputId);
+			const newValue = Math.max(parseInt(input.value) + delta, input.min || 0); // Ensure value doesn't go below min
+			input.value = newValue;
+			updateResults();
+		}
+
+		// Attach input event listeners to all input fields
+		document.querySelectorAll('#diceForm input').forEach(input => {
+			input.addEventListener('input', updateResults);
+		});
+
+		// Initial call to populate results if inputs have default values
+		updateResults();
+	</script>
+</body>
+
+</html>
