@@ -1,9 +1,9 @@
-# Liars-Dice-Calculator
+# Liar's Dice Calculator
 Single file webpage to calculate odds (cheat) in Liar's Dice
 
 Features:
 - Shows odds with and without wildcards in play
-- Visualizer the odds for a given bet
+- Visualize the odds for a given bet
 - automatic updating without the need to refresh
 - single file
 
